@@ -4,8 +4,8 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <h1>Salut, je suis Tom et ceci est mon super site React !</h1>
-      <p>Merci à Billy pour l'aide !</p>
+      <h1>Titre</h1>
+      <p>texte</p>
     </div>
   );
 }
