@@ -54,9 +54,9 @@ function Projects() {
                 <p className={styles.projectDescription}>
                   {project.description}
                 </p>
-                <button className={`${styles.projectButton} bounce-in-bottom`}>
-                  Visiter
-                </button>
+                <div className={styles.projectButtonContainer}>
+                  <button className={styles.projectButton}>Visiter</button>
+                </div>
               </div>
             </div>
           </a>

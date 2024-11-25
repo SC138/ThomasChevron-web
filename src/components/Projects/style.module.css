@@ -37,14 +37,17 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out, border 0.3s ease-in-out;
+  transition:
+    box-shadow 0.3s ease-in-out,
+    transform 0.3s ease-in-out,
+    border 0.3s ease-in-out;
   background: linear-gradient(135deg, #f8f9fa, #e9ecef);
   height: 500px; /* Hauteur uniforme pour toutes les cards */
 }
 
 .projectCard:hover {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-  border: 1px solid #b07557; /* Ajusté à la couleur choisie */
+  border: 1px solid  #d2b48c;
   transform: translateY(-5px);
 }
 
@@ -80,49 +83,50 @@
   flex-grow: 1;
 }
 
+.projectButtonContainer {
+  position: relative;
+  display: inline-block;
+  margin-top: -20px; /* Remonter légèrement le bouton */
+}
+
+.projectButtonContainer::before {
+  content: "";
+  position: absolute;
+  top: -10px; /* Agrandir la zone de survol vers le haut */
+  bottom: -5px; /* Agrandir la zone de survol vers le bas */
+  left: -10px; /* Agrandir la zone de survol vers la gauche */
+  right: -10px; /* Agrandir la zone de survol vers la droite */
+  background: transparent; /* Garder la zone invisible */
+  cursor: pointer; /* Utiliser le pointeur pour rendre toute la zone cliquable */
+}
+
 .projectButton {
-  padding: 10px 40px; /* Rendre le bouton moins large */
+  padding: 10px 40px; /* Garder la taille du bouton inchangée */
   background-color: #b07557; /* Couleur douce personnalisée */
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  animation: slide-in-left .5s cubic-bezier(.25,.46,.45,.94) both; /* Appliquer la nouvelle animation par défaut */
-  margin: 0 auto; /* Centrer le bouton */
+  margin: 0 auto;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
 }
 
-
-.projectButton:hover {
+.projectButton:hover,
+.projectButtonContainer:hover .projectButton {
   background-color: #8d5e46; /* Teinte plus foncée au survol */
-  transform: translateY(-3px); /* Légère remontée pour un effet de clic */
-  animation: none; /* Désactiver l'animation au survol */
+  animation: focus-in-expand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; /* Appliquer l'animation au survol */
 }
 
-/* Slide-in-left animation for buttons */
-@-webkit-keyframes slide-in-left {
+@keyframes focus-in-expand {
   0% {
-    -webkit-transform: translateX(-1000px);
-    transform: translateX(-1000px);
+    letter-spacing: -0.5em;
+    filter: blur(12px);
     opacity: 0;
   }
   100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
+    filter: blur(0);
     opacity: 1;
   }
 }
-
-@keyframes slide-in-left {
-  0% {
-    -webkit-transform: translateX(-1000px);
-    transform: translateX(-1000px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-

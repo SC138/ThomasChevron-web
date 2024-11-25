@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #a98259; /* Arrière-plan inspiré du bois foncé */
 }
 
 .App-logo {
@@ -14,18 +15,18 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #9a602d; /* Couleur foncée inspirée du bois */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #d2b48c; /* Couleur du texte ajustée pour contraster avec le fond bois foncé */
 }
 
 .App-link {
-  color: #61dafb;
+  color: #8b5a2b; /* Couleur café pour les liens */
 }
 
 @keyframes App-logo-spin {
