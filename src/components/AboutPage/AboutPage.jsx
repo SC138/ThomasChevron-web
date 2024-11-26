@@ -5,7 +5,7 @@ import portrait from "../../assets/img/portrait.jpg";
 
 function About() {
     return (
-        <section id="about" className={styles.aboutSection}>
+        <section id="aboutpage" className={styles.aboutSection}>
             <div className={styles.bannerContainer}>
                 <img src={banner} alt="Bannière" className={styles.banner} />
                 <div className={styles.overlay}>

@@ -12,7 +12,7 @@
 }
 
 .logo {
-  height: 80px; /* Ajuste la taille selon ton logo */
+  height: 80px; 
   object-fit: contain;
 }
 
@@ -28,6 +28,7 @@
   text-decoration: none;
   color: #333; 
   font-weight: bold;
+  font-size: 22px;
   position: relative; 
   padding-bottom: 5px; 
   transition: color 0.3s;

@@ -9,10 +9,10 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simuler un délai de chargement (par exemple, pour des requêtes API)
+    // Simuler un délai de chargement 
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // 2 secondes de chargement simulé
+    }, 3000); // 3 secondes de chargement simulé
   }, []);
 
   return (

@@ -1,6 +1,11 @@
 .App {
   text-align: center;
-  background-color: #a98259; /* Arrière-plan inspiré du bois foncé */
+  /* background-color: #a98259;  */
+  /* background-image: url("./assets/img/bg.jpg"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
 }
 
 .App-logo {

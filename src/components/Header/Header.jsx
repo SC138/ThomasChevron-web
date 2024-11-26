@@ -9,7 +9,9 @@ function Header() {
     <header className={styles.header}>
       {/* Logo */}
       <div className={styles.logoContainer}>
-        <img src={logo} alt="Logo Thomas Chevron" className={styles.logo} />
+        <a href="/" className={styles.logoLink}>
+          <img src={logo} alt="Logo Thomas Chevron" className={styles.logo} />
+        </a>
       </div>
 
       {/* Navigation */}
@@ -17,7 +19,7 @@ function Header() {
         <ul className={styles.nav}>
           <li>
             <a
-              href="#home"
+              href="/"
               className={`${styles.link} ${
                 activeLink === "#home" ? styles.active : ""
               }`}
@@ -28,11 +30,11 @@ function Header() {
           </li>
           <li>
             <a
-              href="#about"
+              href="#aboutpage"
               className={`${styles.link} ${
-                activeLink === "#about" ? styles.active : ""
+                activeLink === "#aboutpage" ? styles.active : ""
               }`}
-              onClick={() => setActiveLink("#about")}
+              onClick={() => setActiveLink("#aboutpage")}
             >
               À propos
             </a>
