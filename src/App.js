@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import About from "./components/About/About";
 import AboutPage from "./components/AboutPage/AboutPage";
@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false); // Désactiver le loader après 3 secondes
-    }, 3000);
+    }, 1000);
 
     return () => clearTimeout(timer); // Nettoyer le timeout
   }, []);
