@@ -3,7 +3,7 @@ import styles from "./style.module.css";
 import banner from "../../assets/img/banniere.jpg";
 import portrait from "../../assets/img/portrait.jpg";
 
-function About() {
+function AboutPage() {
     return (
         <section id="aboutpage" className={styles.aboutSection}>
             <div className={styles.bannerContainer}>
@@ -16,13 +16,14 @@ function About() {
                         <h2 className={styles.title}>Thomas Chevron</h2>
                         <p className={styles.text}>
                             Développeur Web Junior – JavaScript & React <br />
-                            Curieux, patient et passionné, je transforme les idées en projets accessibles et innovants.
+                            Curieux, patient et passionné, je transforme les idées en projets accessibles et .
                         </p>
                     </div>
                 </div>
             </div>
         </section>
+
     );
 }
 
-export default About;
+export default AboutPage;

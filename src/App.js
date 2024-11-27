@@ -1,18 +1,22 @@
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import Header from "./components/Header/Header";
 import About from "./components/About/About";
-import React, { useState, useEffect } from "react";
+import AboutPage from "./components/AboutPage/AboutPage";
 import Projects from "./components/Projects/Projects";
 import Loader from "./components/Loader/Loader";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true); // Loader actif par défaut
 
+  // Gestion du premier chargement
   useEffect(() => {
-    // Simuler un délai de chargement 
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000); // 3 secondes de chargement simulé
+    const timer = setTimeout(() => {
+      setIsLoading(false); // Désactiver le loader après 3 secondes
+    }, 3000);
+
+    return () => clearTimeout(timer); // Nettoyer le timeout
   }, []);
 
   return (
@@ -20,13 +24,23 @@ function App() {
       {isLoading ? (
         <Loader />
       ) : (
-        <>
-          <Header />
+        <Router>
+          <Header setIsLoading={setIsLoading} /> {/* On passe la gestion du loader à Header */}
           <main>
-            <About />
-            <Projects />
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <About />
+                    <Projects />
+                  </>
+                }
+              />
+              <Route path="/aboutpage" element={<AboutPage />} />
+            </Routes>
           </main>
-        </>
+        </Router>
       )}
     </div>
   );
