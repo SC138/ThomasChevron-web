@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import styles from "./style.module.css";
 
 // Import des images
 import fisheyeImage from "../../assets/img/fisheye.png";
 import kasaImage from "../../assets/img/kasa.jpeg";
 import petitsplatsImage from "../../assets/img/petitsplats.jpeg";
-import jobgestionImage1 from "../../assets/img/jobgestion1.png"; // Image 1
-import jobgestionImage2 from "../../assets/img/jobgestion2.png"; // Image 2
-import jobgestionImage3 from "../../assets/img/jobgestion3.png"; // Image 3
-import jobgestionImage4 from "../../assets/img/jobgestion4.png"; // Image 4
+import jobgestionImage1 from "../../assets/img/jobgestion1.png";
+import jobgestionImage2 from "../../assets/img/jobgestion2.png";
+import jobgestionImage3 from "../../assets/img/jobgestion3.png";
+import jobgestionImage4 from "../../assets/img/jobgestion4.png";
 
 function Projects() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0); // Gestion du slider pour "Job Gestion"
@@ -17,15 +18,17 @@ function Projects() {
     jobgestionImage2,
     jobgestionImage3,
     jobgestionImage4,
-  ]; // Images pour le slider
+  ];
 
   const projects = [
     {
       title: "Fisheye",
       description: (
         <>
-          Un projet photo interactif qui permet de découvrir des photographes talentueux. <br />
-          Développé en JavaScript, ce projet mise sur l'accessibilité avec une navigation clavier et des descriptions conformes aux standards WCAG.
+          Un projet photo interactif qui permet de découvrir des photographes
+          talentueux. <br />
+          Développé en JavaScript, ce projet mise sur l'accessibilité avec une
+          navigation clavier et des descriptions conformes aux standards WCAG.
         </>
       ),
       link: "https://fisheye-tc.netlify.app/",
@@ -33,23 +36,24 @@ function Projects() {
     },
     {
       title: "Kasa",
-      description:(
+      description: (
         <>
           Une application de location immobilière. <br />
-          Développée en React, cette application propose une interface utilisateur moderne et intuitive.
+          Développée en React, cette application propose une interface
+          utilisateur moderne et intuitive.
         </>
       ),
-        
-        
+
       link: "https://kaza-tc.netlify.app/",
       image: kasaImage,
     },
     {
       title: "Les Petits Plats",
-      description:(
+      description: (
         <>
           Un site de recettes de cuisine. <br />
-          Développé en JavaScript, ce projet propose une recherche de recettes par ingrédients.
+          Développé en JavaScript, ce projet propose une recherche de recettes
+          par ingrédients.
         </>
       ),
       link: "https://lespetitsplats-tc.netlify.app/",
@@ -67,7 +71,9 @@ function Projects() {
   // Défilement automatique
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % jobGestionImages.length);
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % jobGestionImages.length
+      );
     }, 3000); // Change d'image toutes les 3 secondes
 
     return () => clearInterval(interval); // Nettoyer l'intervalle à la destruction du composant
@@ -78,20 +84,23 @@ function Projects() {
       <h2 className={styles.title}>Mes Projets</h2>
       <div className={styles.projectList}>
         {projects.map((project, index) => (
-          <div
+          <motion.div
             key={index}
             className={`${styles.projectCardLink} ${
               project.isFullWidth ? styles.fullWidth : ""
             }`}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }} // Cascade
+            viewport={{ once: true }} // Animation jouée une seule fois
           >
             <div className={styles.projectCard}>
-              {/* Slider pour JobGestion */}
               {project.title === "JobGestion" ? (
                 <div className={styles.slider}>
                   <img
                     src={jobGestionImages[currentImageIndex]}
                     alt={`Slide ${currentImageIndex + 1}`}
-                    className={styles.sliderImage} 
+                    className={styles.sliderImage}
                   />
                 </div>
               ) : (
@@ -126,7 +135,7 @@ function Projects() {
                 )}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
