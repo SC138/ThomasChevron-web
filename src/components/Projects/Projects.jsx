@@ -71,7 +71,7 @@ function Projects() {
     }, 3000); // Change d'image toutes les 3 secondes
 
     return () => clearInterval(interval); // Nettoyer l'intervalle à la destruction du composant
-  }, []);
+  }, [jobGestionImages.length]);
 
   return (
     <section id="projects" className={styles.projects}>
