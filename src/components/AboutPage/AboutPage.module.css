@@ -1,0 +1,138 @@
+/* Conteneur principal de la section */
+.aboutSection {
+  display: flex;
+  flex-direction: column; /* Aligne tout en colonne */
+  justify-content: flex-start; /* Alignement vertical au début */
+  align-items: center; /* Centre les enfants horizontalement */
+  height: 100vh; /* Pleine hauteur */
+  background-color: black; /* Couleur de fond */
+  padding: 50px; /* Espacement global */
+  gap: 30px; /* Espacement entre les blocs */
+}
+
+/* Conteneur des éléments (image + texte) */
+.contentContainer {
+  display: flex; /* Flexbox pour aligner image + texte côte à côte */
+  align-items: center; /* Centrage vertical des enfants */
+  gap: 20px; /* Espacement horizontal entre image et texte */
+  width: 100%; /* Prend toute la largeur de la section */
+  max-width: 1200px; /* Limite la largeur totale pour un alignement propre */
+}
+
+/* Portrait */
+.portrait2Container {
+  flex-shrink: 0; /* Empêche l'image de rétrécir */
+  width: 300px; /* Largeur fixe de l'image */
+  margin-left: 0; /* Colle l'image à gauche */
+}
+
+.portrait2 {
+  width: 100%; /* S'adapte au conteneur */
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
+
+/* Texte */
+.textContainer {
+  flex: 1; /* Le texte prend tout l'espace disponible */
+  padding-left: 20px; /* Espace entre le texte et l'image */
+  background-color: #242323;
+  border: 1px solid black;
+  opacity: 0.6;
+  margin: 50px;
+  
+}
+
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffd7a2;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ffd7a2;
+}
+
+/* Nouveau bloc de texte */
+.extraTextContainer {
+  width: 100%; /* Prend toute la largeur */
+  max-width: 800px; /* Limite la largeur */
+  background-color: #ffffff; /* Fond blanc */
+  padding: 20px; /* Espacement interne */
+  border-radius: 8px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre */
+  text-align: center; /* Centre le texte */
+}
+
+.extraTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.extraDescription {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Conteneur pour les logos */
+.logosContainer {
+  display: flex; /* Dispose les logos en ligne */
+  justify-content: center; /* Centre les logos horizontalement */
+  align-items: center; /* Centre les logos verticalement */
+  gap: 20px; /* Espacement entre les logos */
+  margin-top: 20px; /* Espace entre les logos et le reste de la page */
+  flex-wrap: wrap; /* Permet aux logos de passer à la ligne sur petits écrans */
+}
+
+/* Style des logos */
+.logo {
+  width: 80px; /* Taille standard des logos */
+  height: auto; /* Conserve les proportions */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Animation au survol */
+  fill: white;
+}
+
+.logo:hover {
+  transform: scale(1.2); /* Agrandit légèrement au survol */
+  opacity: 0.8; /* Légère transparence */
+  fill: white;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contentContainer {
+    flex-direction: column; /* Passe en colonne sur mobile */
+    align-items: center;
+    gap: 20px; /* Réduit l'espacement entre les éléments */
+  }
+
+  .portrait2Container {
+    margin-left: 0; /* Supprime le décalage sur mobile */
+  }
+
+  .textContainer {
+    padding-left: 0; /* Supprime l'espace entre image et texte */
+    text-align: center; /* Centre le texte */
+  }
+
+  .extraTextContainer {
+    padding: 15px; /* Réduit l'espacement interne */
+    margin-top: 20px; /* Réduit l'espacement au-dessus */
+  }
+
+  .extraTitle {
+    font-size: 1.5rem; /* Réduit la taille du titre */
+  }
+
+  .extraDescription {
+    font-size: 1rem; /* Réduit la taille du texte */
+  }
+}

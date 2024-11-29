@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import styles from "./style.module.css";
+import styles from "./Projects.module.css";
 
 // Import des images
 import fisheyeImage from "../../assets/img/fisheye.png";

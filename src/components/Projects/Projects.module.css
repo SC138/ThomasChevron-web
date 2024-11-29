@@ -1,0 +1,152 @@
+.projects {
+  padding: 50px;
+  /* background-color: #fff; */
+  text-align: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #d2b48c;
+}
+
+.projectList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.projectCardLink {
+  color: inherit;
+  width: calc(33% - 40px);
+  margin: 20px;
+  transition: transform 0.3s;
+}
+
+.projectCardLink a {
+  text-decoration: none;
+}
+
+.projectCardLink:hover {
+  transform: scale(1.05); /* Zoom léger au survol */
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 2px solid #d2b48c;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    box-shadow 0.3s ease-in-out,
+    transform 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  height: 500px; /* Hauteur uniforme pour toutes les cards */
+}
+
+.projectCard:hover {
+  box-shadow: 1px 1px 26px 11px #d2b48c;
+  transform: translateY(-5px);
+}
+
+.projectImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ajustement pour remplir l'espace tout en maintenant le haut visible */
+  object-position: top; /* Afficher le haut de l'image sans la couper */
+  transition: transform 0.5s ease;
+  align-self: flex-start; /* S'assurer que l'image reste bloquée en haut */
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.1); /* Zoom de l'image au survol */
+}
+
+.projectContent {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projectTitle {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.projectDescription {
+  color: #555;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.projectButtonContainer {
+  position: relative;
+  display: inline-block;
+  margin-top: -20px; /* Remonter légèrement le bouton */
+}
+
+.projectButtonContainer::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  bottom: -5px;
+  left: -10px;
+  right: -10px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.projectButton {
+  padding: 10px 40px;
+  background-color: #b07557;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 auto;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.projectButton:hover,
+.projectButtonContainer:hover .projectButton {
+  background-color: #8d5e46; /* Teinte plus foncée au survol */
+  animation: focus-in-expand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; /* animation au survol */
+}
+
+@keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+/* === Full-Width Project (JobGestion) === */
+.fullWidth {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.fullWidth .projectCard {
+  height: 1000px; /* Hauteur ajustée pour JobGestion */
+}
+
+.fullWidth .sliderImage {
+  width: 100%;
+  height: 700px; /* Taille spécifique des images dans le slider */
+  object-fit: cover;
+  object-position: top;
+}

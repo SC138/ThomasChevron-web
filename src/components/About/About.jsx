@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./style.module.css";
+import styles from "./About.module.css";
 import banner from "../../assets/img/banniere.jpg";
 import portrait from "../../assets/img/portrait.jpg";
 import { motion } from "framer-motion";

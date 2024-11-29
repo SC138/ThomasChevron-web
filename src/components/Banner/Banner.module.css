@@ -1,0 +1,21 @@
+.bannerSection {
+  height: 100vh; /* Pleine hauteur */
+  background: url('../../assets/img/banniere.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative; /* Nécessaire pour l'animation */
+  z-index: 10; /* Assure que la bannière reste au-dessus des autres */
+}
+
+.bannerContent h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.bannerContent p {
+  font-size: 1.5rem;
+}
