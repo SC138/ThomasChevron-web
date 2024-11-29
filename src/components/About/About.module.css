@@ -1,0 +1,31 @@
+.aboutSection {
+  height: 100vh; /* Pleine hauteur */
+  background-color: #c6c7c8; /* Couleur de fond */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutContent {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Espacement entre la photo et le texte */
+}
+
+.portrait {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #d2b48c; /* Couleur bois */
+}
+
+.textContent h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.textContent p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}

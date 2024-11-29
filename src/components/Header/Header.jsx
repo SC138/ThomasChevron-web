@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import styles from "./style.module.css";
+import styles from "./Header.module.css";
 import logo from "../../assets/img/logo-tc.png";
 
 function Header({ setIsLoading }) {

@@ -1,22 +1,22 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
+import Banner from "./components/Banner/Banner";
 import About from "./components/About/About";
-import AboutPage from "./components/AboutPage/AboutPage";
 import Projects from "./components/Projects/Projects";
 import Loader from "./components/Loader/Loader";
 import { useState, useEffect } from "react";
+import ScrollStickySection from "./components/ScrollStickySection/ScrollStickySection";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true); // Loader actif par défaut
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Gestion du premier chargement
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsLoading(false); // Désactiver le loader après 3 secondes
+      setIsLoading(false);
     }, 1000);
 
-    return () => clearTimeout(timer); // Nettoyer le timeout
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -25,19 +25,30 @@ function App() {
         <Loader />
       ) : (
         <Router>
-          <Header setIsLoading={setIsLoading} /> {/* On passe la gestion du loader à Header */}
+          <Header setIsLoading={setIsLoading} />
           <main>
             <Routes>
               <Route
                 path="/"
                 element={
                   <>
-                    <About />
-                    <Projects />
+                    {/* Bannière */}
+                    <ScrollStickySection bgColor="#000">
+                      <Banner />
+                    </ScrollStickySection>
+
+                    {/* À propos */}
+                    <ScrollStickySection bgColor="#f8f9fa">
+                      <About />
+                    </ScrollStickySection>
+
+                    {/* Projets */}
+                    <ScrollStickySection bgColor="#fff">
+                      <Projects />
+                    </ScrollStickySection>
                   </>
                 }
               />
-              <Route path="/aboutpage" element={<AboutPage />} />
             </Routes>
           </main>
         </Router>

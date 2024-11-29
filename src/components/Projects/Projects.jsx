@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import styles from "./style.module.css";
+import styles from "./Projects.module.css";
 
 // Import des images
 import fisheyeImage from "../../assets/img/fisheye.png";
@@ -12,7 +12,7 @@ import jobgestionImage3 from "../../assets/img/jobgestion3.png";
 import jobgestionImage4 from "../../assets/img/jobgestion4.png";
 
 function Projects() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0); // Gestion du slider pour "Job Gestion"
+  const [currentImageIndex, setCurrentImageIndex] = useState(0); // Slider JobGestion
   const jobGestionImages = [
     jobgestionImage1,
     jobgestionImage2,
@@ -43,7 +43,6 @@ function Projects() {
           utilisateur moderne et intuitive.
         </>
       ),
-
       link: "https://kaza-tc.netlify.app/",
       image: kasaImage,
     },
@@ -68,15 +67,15 @@ function Projects() {
     },
   ];
 
-  // Défilement automatique
+  // Défilement automatique des images dans le slider JobGestion
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex(
         (prevIndex) => (prevIndex + 1) % jobGestionImages.length
       );
-    }, 3000); // Change d'image toutes les 3 secondes
+    }, 3000); // Change toutes les 3 secondes
 
-    return () => clearInterval(interval); // Nettoyer l'intervalle à la destruction du composant
+    return () => clearInterval(interval); // Nettoie le slider
   }, [jobGestionImages.length]);
 
   return (
@@ -91,10 +90,11 @@ function Projects() {
             }`}
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }} // Cascade
-            viewport={{ once: true }} // Animation jouée une seule fois
+            transition={{ duration: 0.6, delay: index * 0.2 }} // Cascade pour les cartes
+            viewport={{ once: true }} // Animation jouée une fois
           >
             <div className={styles.projectCard}>
+              {/* Slider spécifique pour JobGestion */}
               {project.title === "JobGestion" ? (
                 <div className={styles.slider}>
                   <img
@@ -104,6 +104,7 @@ function Projects() {
                   />
                 </div>
               ) : (
+                // Carte classique avec lien
                 <a
                   href={project.link}
                   target="_blank"

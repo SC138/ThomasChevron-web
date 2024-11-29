@@ -1,41 +1,154 @@
+/* === Style Global === */
 body {
   font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Empêcher tout défilement horizontal */
+  scroll-behavior: smooth; /* Transition fluide entre les sections */
+}
 
+.App > * {
+  scroll-snap-align: start; /* Chaque section commence en haut de l'écran */
+  scroll-snap-type: y mandatory; /* Scroll fluide obligatoire entre les blocs */
 }
 
 .App {
   text-align: center;
-  /* background-color: #a98259;  */
-  /* background-image: url("./assets/img/bg.jpg"); */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* === Sections principales === */
+section {
+  height: 100vh; /* Chaque section occupe toute la hauteur de l'écran */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Ajustement pour les sections sticky */
+section[style*="sticky"] {
+  position: sticky;
+  top: 0; /* Collé en haut */
+  z-index: 1; /* Contrôle de la superposition */
+}
+
+/* === Bannière (Hero Section) === */
+.heroSection {
+  background: linear-gradient(135deg, #9a602d, #d2b48c); /* Fond inspiré du bois */
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* === À propos === */
+.aboutSection {
+  background-color: #f8f9fa; /* Fond clair */
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* === Projets === */
+.projectsSection {
+  background-color: #fff;
+  padding: 20px;
+}
+
+/* === Contact === */
+.contactSection {
+  background-color: #d2b48c;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === Titres des sections === */
+.sectionTitle {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sectionText {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* === Animation globale (Apparition au scroll) === */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
+section > * {
+  animation: fade-in 1s ease-in-out; /* Animation d'apparition par défaut */
+}
+
+/* === Listes des projets === */
+.projectList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.projectCard {
+  width: 300px;
+  height: 200px;
+  background: #e9ecef;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.projectButton {
+  background-color: #9a602d;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.projectButton:hover {
+  background-color: #7a4e23;
+}
+
+/* === Autres styles existants === */
 .App-header {
-  background-color: #9a602d; /* Couleur foncée inspirée du bois */
+  background-color: #9a602d;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #d2b48c; /* Couleur du texte ajustée pour contraster avec le fond bois foncé */
-}
-
-.App-link {
-  color: #8b5a2b; /* Couleur café pour les liens */
+  color: #d2b48c;
 }
 
 @keyframes App-logo-spin {
