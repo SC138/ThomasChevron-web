@@ -5,16 +5,17 @@ import logo from "../../assets/img/logo-tc.png";
 
 function Header({ setIsLoading }) {
   const [activeLink, setActiveLink] = useState("#home"); // Lien actif par défaut
-  const location = useLocation(); // Connaître la route actuelle
+  const location = useLocation();
 
   const handleClick = (link) => {
-    setActiveLink(link); // Met à jour le lien actif
+    setActiveLink(link); // Mettre à jour le lien actif
+
+    // Active le loader UNIQUEMENT pour "Accueil" si on change de page
     if (link === "#home" && location.pathname !== "/") {
-      // Active le loader uniquement pour "Accueil" et si on n'est pas déjà dessus
-      setIsLoading(true);
+      setIsLoading?.(true); // Active le loader
       setTimeout(() => {
-        setIsLoading(false); // Désactive le loader après 3 secondes
-      }, 3000);
+        setIsLoading?.(false); // Désactive le loader après 1 seconde
+      }, 1000);
     }
   };
 
@@ -33,9 +34,7 @@ function Header({ setIsLoading }) {
           <li>
             <Link
               to="/"
-              className={`${styles.link} ${
-                activeLink === "#home" ? styles.active : ""
-              }`}
+              className={`${styles.link} ${activeLink === "#home" ? styles.active : ""}`}
               onClick={() => handleClick("#home")}
             >
               Accueil
@@ -44,46 +43,20 @@ function Header({ setIsLoading }) {
           <li>
             <Link
               to="/aboutpage"
-              className={`${styles.link} ${
-                activeLink === "#aboutpage" ? styles.active : ""
-              }`}
+              className={`${styles.link} ${activeLink === "#aboutpage" ? styles.active : ""}`}
               onClick={() => handleClick("#aboutpage")}
             >
               À propos
             </Link>
           </li>
           <li>
-            <a
-              href="#projects"
-              className={`${styles.link} ${
-                activeLink === "#projects" ? styles.active : ""
-              }`}
-              onClick={() => setActiveLink("#projects")}
-            >
-              Projets
-            </a>
-          </li>
-          <li>
-            <a
-              href="#skills"
-              className={`${styles.link} ${
-                activeLink === "#skills" ? styles.active : ""
-              }`}
-              onClick={() => setActiveLink("#skills")}
-            >
-              Compétences
-            </a>
-          </li>
-          <li>
-            <a
-              href="#contact"
-              className={`${styles.link} ${
-                activeLink === "#contact" ? styles.active : ""
-              }`}
-              onClick={() => setActiveLink("#contact")}
+            <Link
+              to="/contact"
+              className={`${styles.link} ${activeLink === "#contact" ? styles.active : ""}`}
+              onClick={() => handleClick("#contact")}
             >
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

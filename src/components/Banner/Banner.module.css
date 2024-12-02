@@ -1,5 +1,5 @@
 .bannerSection {
-  height: 100vh; /* Pleine hauteur */
+  height: 100vh; 
   background: url('../../assets/img/banniere.jpg') no-repeat center center;
   background-size: cover;
   display: flex;

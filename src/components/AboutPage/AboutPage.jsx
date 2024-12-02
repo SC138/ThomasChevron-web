@@ -41,24 +41,90 @@ function AboutPage() {
             Titre RNCP niveau 6 - BAC+4 - OpenClassrooms, formation en
             distanciel
           </p>
+          <p>
+            <a
+              href="/cv-thomas-chevron.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.cvLink}
+            >
+              Mon CV disponible ici
+            </a>
+          </p>
         </div>
       </div>
       <div className={styles.extraTextContainer}>
         <h3 className={styles.extraTitle}>Technologies</h3>
       </div>
       <div className={styles.logosContainer}>
-        <LogoCSS className={styles.logo} />
-        <LogoHTML className={styles.logo} />
-        <LogoJS className={styles.logo} />
-        <LogoReact className={styles.logo} />
-        <LogoNode className={styles.logo} />
-        <LogoPostman className={styles.logo} />
-        <LogoPhp className={styles.logo} />
-        <LogoSql className={styles.logo} />
-        <LogoMysql className={styles.logo} />
-        <LogoPython className={styles.logo} />
-        <LogoGithub className={styles.logo} />
+        <div className={styles.logoWrapper}>
+          <LogoHTML className={styles.logo} />
+          <span className={styles.logoName}>HTML5</span>
+        </div>
+        <div className={styles.logoWrapper}>
+          <LogoCSS className={styles.logo} />
+          <span className={styles.logoName}>CSS3</span>
+        </div>
+        <div className={styles.logoWrapper}>
+          <LogoJS className={styles.logo} />
+          <span className={styles.logoName}>JavaScript</span>
+        </div>
+        <div className={styles.logoWrapper}>
+          <LogoReact className={styles.logo} />
+          <span className={styles.logoName}>React</span>
+        </div>
+        <div className={styles.logoWrapper}>
+          <LogoNode className={styles.logo} />
+          <span className={styles.logoName}>Node.js</span>
+        </div>
+        <div className={styles.logoWrapper}>
+          <LogoPostman className={styles.logo} />
+          <span className={styles.logoName}>Postman</span>
+        </div>
+        <div className={styles.logoWrapper}>
+          <LogoPhp className={styles.logo} />
+          <span className={styles.logoName}>PHP</span>
+        </div>
+        <div className={styles.logoWrapper}>
+          <LogoSql className={styles.logo} />
+          <span className={styles.logoName}>SQL</span>
+        </div>
+        <div className={styles.logoWrapper}>
+          <LogoMysql className={styles.logo} />
+          <span className={styles.logoName}>MySQL</span>
+        </div>
+        <div className={styles.logoWrapper}>
+          <LogoPython className={styles.logo} />
+          <span className={styles.logoName}>Python</span>
+        </div>
+        <div className={styles.logoWrapper}>
+          <LogoGithub className={styles.logo} />
+          <span className={styles.logoName}>GitHub</span>
+        </div>
       </div>
+
+      <div className={styles.valuesAndGoalsContainer}>
+  {/* Section Mes valeurs */}
+  <div className={styles.valuesContainer}>
+    <h3 className={styles.valuesTitle}>Mes valeurs</h3>
+    <ul className={styles.valuesList}>
+      <li>💡 Innovation : toujours explorer de nouvelles solutions.</li>
+      <li>🤝 Collaboration : l’entraide est au cœur de mes projets.</li>
+      <li>🌍 Accessibilité : créer des applications utilisables par tous.</li>
+      <li>📈 Apprentissage continu : apprendre chaque jour pour évoluer.</li>
+    </ul>
+  </div>
+
+  {/* Section Ce que je recherche */}
+  <div className={styles.goalsContainer}>
+    <h3 className={styles.goalsTitle}>Ce que je recherche</h3>
+    <p className={styles.goalsDescription}>
+      Je suis à la recherche d'un poste en tant que développeur front-end ou
+      full-stack, dans une entreprise où je pourrai apprendre, collaborer,
+      et apporter mes compétences en JavaScript, React, et Node.js.
+    </p>
+  </div>
+</div>
     </section>
   );
 }

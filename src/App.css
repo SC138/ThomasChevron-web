@@ -1,15 +1,22 @@
-body {
-  font-family: 'Quicksand', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Quicksand", sans-serif;
 }
 
 .App {
   text-align: center;
-  /* background-color: #a98259;  */
-  /* background-image: url("./assets/img/bg.jpg"); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
   background-color: black;
 }
 
@@ -25,18 +32,18 @@ body {
 }
 
 .App-header {
-  background-color: #9a602d; /* Couleur foncée inspirée du bois */
+  background-color: #9a602d;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #d2b48c; /* Couleur du texte ajustée pour contraster avec le fond bois foncé */
+  color: #d2b48c;
 }
 
 .App-link {
-  color: #8b5a2b; /* Couleur café pour les liens */
+  color: #8b5a2b;
 }
 
 @keyframes App-logo-spin {

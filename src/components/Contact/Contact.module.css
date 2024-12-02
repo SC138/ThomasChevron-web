@@ -1,0 +1,60 @@
+.contactSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #ffd7a2;
+    padding: 0; 
+    box-sizing: border-box;
+    position: relative;
+    top: 100px; 
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffd7a2;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .iconsContainer {
+    display: flex;
+    gap: 30px; 
+    justify-content: center;
+    flex-wrap: wrap; 
+  }
+  
+  .iconLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #ffd7a2;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .iconLink:hover {
+    transform: scale(1.5); /* Agrandit légèrement au survol */
+    opacity: 1; 
+  }
+  
+  .icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 8px;
+    fill: #ffd7a2; 
+    transition: fill 0.3s ease;
+  }
+  
+  .icon:hover {
+    fill: #f5c78b;/* Change la couleur des icônes au survol */
+  }
+  
+  .label {
+    font-size: 1rem;
+    margin-top: 5px;
+  }

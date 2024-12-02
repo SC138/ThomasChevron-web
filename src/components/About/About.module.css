@@ -8,7 +8,7 @@
 .bannerContainer {
   position: relative;
   width: 100%;
-  height: 300px; /* Ajuste selon la taille souhaitée */
+  height: 300px;
 }
 
 .banner {
@@ -25,31 +25,30 @@
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center; /* Centre verticalement */
+  align-items: center;
 }
 
 /* Portrait */
 .portraitContainer {
   position: absolute;
-  left: 50px; /* Place le portrait légèrement à gauche */
+  left: 50px;
 }
 
 .portrait {
-  width: 250px; /* Dimensions exactes */
+  width: 250px;
   height: 250px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid white; /* Bordure blanche autour du portrait */
+  border: 4px solid #d2b48c;
 }
 
 /* Texte */
 .textOverlay {
-  margin: 0 auto; 
-  text-align: center; 
+  margin: 0 auto;
+  text-align: center;
   color: white;
-  text-shadow: 1px 1px 4px rgb(0, 0, 0); 
+  text-shadow: 1px 1px 4px rgb(0, 0, 0);
 }
-
 
 .title {
   font-size: 3rem;

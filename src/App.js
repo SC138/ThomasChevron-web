@@ -1,22 +1,55 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header/Header";
 import About from "./components/About/About";
 import AboutPage from "./components/AboutPage/AboutPage";
 import Projects from "./components/Projects/Projects";
 import Loader from "./components/Loader/Loader";
+import Contact from "./components/Contact/Contact";
 import { useState, useEffect } from "react";
 
-function App() {
-  const [isLoading, setIsLoading] = useState(true); // Loader actif par défaut
+function AppWrapper({ setIsLoading }) {
+  const location = useLocation();
 
-  // Gestion du premier chargement
+  useEffect(() => {
+    if (location.pathname === "/contact" || location.pathname === "/aboutpage") {
+      document.body.style.overflow = "hidden"; // Désactiver le scroll
+    } else {
+      document.body.style.overflow = "auto"; // Activer le scroll
+    }
+  }, [location]);
+
+  return (
+    <>
+      <Header setIsLoading={setIsLoading} />
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <About />
+                <Projects />
+              </>
+            }
+          />
+          <Route path="/aboutpage" element={<AboutPage />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+    </>
+  );
+}
+
+function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsLoading(false); // Désactiver le loader après 3 secondes
+      setIsLoading(false);
     }, 1000);
 
-    return () => clearTimeout(timer); // Nettoyer le timeout
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -25,21 +58,7 @@ function App() {
         <Loader />
       ) : (
         <Router>
-          <Header setIsLoading={setIsLoading} /> {/* On passe la gestion du loader à Header */}
-          <main>
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  <>
-                    <About />
-                    <Projects />
-                  </>
-                }
-              />
-              <Route path="/aboutpage" element={<AboutPage />} />
-            </Routes>
-          </main>
+          <AppWrapper setIsLoading={setIsLoading} />
         </Router>
       )}
     </div>

@@ -1,50 +1,48 @@
 /* Conteneur principal de la section */
 .aboutSection {
   display: flex;
-  flex-direction: column; /* Aligne tout en colonne */
-  justify-content: flex-start; /* Alignement vertical au début */
-  align-items: center; /* Centre les enfants horizontalement */
-  height: 100vh; /* Pleine hauteur */
-  background-color: black; /* Couleur de fond */
-  padding: 50px; /* Espacement global */
-  gap: 30px; /* Espacement entre les blocs */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-x: hidden;
+  background-color: black;
+  padding: 50px;
+  gap: 30px;
 }
 
 /* Conteneur des éléments (image + texte) */
 .contentContainer {
-  display: flex; /* Flexbox pour aligner image + texte côte à côte */
-  align-items: center; /* Centrage vertical des enfants */
-  gap: 20px; /* Espacement horizontal entre image et texte */
-  width: 100%; /* Prend toute la largeur de la section */
-  max-width: 1200px; /* Limite la largeur totale pour un alignement propre */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 /* Portrait */
 .portrait2Container {
-  flex-shrink: 0; /* Empêche l'image de rétrécir */
-  width: 300px; /* Largeur fixe de l'image */
-  margin-left: 0; /* Colle l'image à gauche */
+  flex-shrink: 0;
+  width: 300px;
+  margin-left: 0;
 }
 
 .portrait2 {
-  width: 100%; /* S'adapte au conteneur */
+  width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Texte */
 .textContainer {
-  flex: 1; /* Le texte prend tout l'espace disponible */
-  padding-left: 20px; /* Espace entre le texte et l'image */
+  flex: 1;
+  padding-left: 20px;
   background-color: #242323;
   border: 1px solid black;
-  opacity: 0.6;
+  opacity: 1;
   margin: 50px;
-  
 }
-
 
 .title {
   font-size: 2rem;
@@ -59,22 +57,51 @@
   color: #ffd7a2;
 }
 
+.cvLink {
+  color: #ffd7a2;
+  font-size: 1.4rem;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 20px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.cvLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #ffd7a2;
+  transition: width 0.5s ease;
+}
+
+.cvLink:hover::after {
+  width: 100%;
+}
+
+.cvLink:hover {
+  color: #f5c78b;
+}
+
 /* Nouveau bloc de texte */
 .extraTextContainer {
-  width: 100%; /* Prend toute la largeur */
-  max-width: 800px; /* Limite la largeur */
-  background-color: #ffffff; /* Fond blanc */
-  padding: 20px; /* Espacement interne */
-  border-radius: 8px; /* Coins arrondis */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre */
-  text-align: center; /* Centre le texte */
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  text-align: center;
 }
 
 .extraTitle {
-  font-size: 1.8rem;
+  font-size: 3.8rem;
   font-weight: bold;
-  color: #333;
+  color: #ffd7a2;
   margin-bottom: 15px;
+  opacity: 1;
 }
 
 .extraDescription {
@@ -85,54 +112,125 @@
 
 /* Conteneur pour les logos */
 .logosContainer {
-  display: flex; /* Dispose les logos en ligne */
-  justify-content: center; /* Centre les logos horizontalement */
-  align-items: center; /* Centre les logos verticalement */
-  gap: 20px; /* Espacement entre les logos */
-  margin-top: 20px; /* Espace entre les logos et le reste de la page */
-  flex-wrap: wrap; /* Permet aux logos de passer à la ligne sur petits écrans */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/* Conteneur pour chaque logo + texte */
+.logoWrapper {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 10px;
+}
+
+/* Texte sous les logos */
+.logoName {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: transparent;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease; /* Animation fluide */
+}
+
+/* Affiche le texte au survol */
+.logoWrapper:hover .logoName {
+  color: #ffd7a2; /* Texte visible au survol */
+  opacity: 1; /* Texte totalement visible */
+  transform: translateY(30px); /* Repositionne correctement */
 }
 
 /* Style des logos */
 .logo {
-  width: 80px; /* Taille standard des logos */
-  height: auto; /* Conserve les proportions */
-  transition: transform 0.3s ease, opacity 0.3s ease; /* Animation au survol */
-  fill: white;
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); /* Animation fluide */
+  fill: #ffd7a2;
 }
 
 .logo:hover {
-  transform: scale(1.2); /* Agrandit légèrement au survol */
-  opacity: 0.8; /* Légère transparence */
-  fill: white;
+  transform: scale(1.5); /* Agrandit au survol */
+  fill: #f5c78b;
 }
+
+.valuesAndGoalsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.valuesContainer,
+.goalsContainer {
+  flex: 1;
+  background-color: #242323;
+  color: #ffd7a2;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.valuesTitle,
+.goalsTitle {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.valuesList {
+  list-style-type: none;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.goalsDescription {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .contentContainer {
-    flex-direction: column; /* Passe en colonne sur mobile */
+    flex-direction: column;
     align-items: center;
-    gap: 20px; /* Réduit l'espacement entre les éléments */
+    gap: 20px;
   }
 
   .portrait2Container {
-    margin-left: 0; /* Supprime le décalage sur mobile */
+    margin-left: 0;
   }
 
   .textContainer {
-    padding-left: 0; /* Supprime l'espace entre image et texte */
-    text-align: center; /* Centre le texte */
+    padding-left: 0;
+    text-align: center;
   }
 
   .extraTextContainer {
-    padding: 15px; /* Réduit l'espacement interne */
-    margin-top: 20px; /* Réduit l'espacement au-dessus */
+    padding: 15px;
+    margin-top: 20px;
   }
 
   .extraTitle {
-    font-size: 1.5rem; /* Réduit la taille du titre */
+    font-size: 1.5rem;
   }
 
   .extraDescription {
-    font-size: 1rem; /* Réduit la taille du texte */
+    font-size: 1rem;
+  }
+
+  .valuesAndGoalsContainer {
+    flex-direction: column;
+    gap: 30px;
   }
 }
