@@ -16,7 +16,7 @@ function Header({ setIsLoading }) {
       setIsLoading?.(true); // Active le loader
       setTimeout(() => {
         setIsLoading?.(false); // Désactive le loader après 1 seconde
-      }, 1000);
+      }, 5000);
     }
   };
 

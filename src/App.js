@@ -68,7 +68,7 @@ function App() {
     // Simule un délai de chargement (ex. pour un appel API)
     const timer = setTimeout(() => {
       setIsLoading(false); // Désactive le loader après 1 seconde
-    }, 1000);
+    }, 3000);
 
     return () => clearTimeout(timer); // Nettoie le timer lorsque le composant est démonté
   }, []);
