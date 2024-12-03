@@ -1,60 +1,127 @@
 .contactSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: #ffd7a2;
-    padding: 0; 
-    box-sizing: border-box;
-    position: relative;
-    top: 100px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #ffd7a2;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  top: 100px;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffd7a2;
+  cursor: default;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  cursor: default;
+}
+
+.iconsContainer {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.iconLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #ffd7a2;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.iconLink:hover {
+  transform: scale(1.5); /* Agrandit légèrement au survol */
+  opacity: 1;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 8px;
+  fill: #ffd7a2;
+  transition: fill 0.3s ease;
+}
+
+.icon:hover {
+  fill: #f5c78b; /* Change la couleur des icônes au survol */
+}
+
+.label {
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+/* Responsive Design for Desktop */
+@media (min-width: 1200px) {
+  .contactSection {
+    top: 50px; 
+    padding: 40px;
   }
-  
+
   .title {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #ffd7a2;
+    font-size: 3rem; 
   }
-  
+
   .description {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1.5rem; 
+    margin-bottom: 40px; 
   }
-  
+
   .iconsContainer {
-    display: flex;
-    gap: 30px; 
-    justify-content: center;
-    flex-wrap: wrap; 
+    gap: 50px; 
   }
-  
-  .iconLink {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #ffd7a2;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-  
-  .iconLink:hover {
-    transform: scale(1.5); /* Agrandit légèrement au survol */
-    opacity: 1; 
-  }
-  
+
   .icon {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 8px;
-    fill: #ffd7a2; 
-    transition: fill 0.3s ease;
+    width: 120px; 
+    height: 120px;
   }
-  
-  .icon:hover {
-    fill: #f5c78b;/* Change la couleur des icônes au survol */
-  }
-  
+
   .label {
-    font-size: 1rem;
+    font-size: 1.2rem; 
+    margin-top: 10px;
+  }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .contactSection {
+    top: 20px; 
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 2rem; 
+  }
+
+  .description {
+    font-size: 1rem; 
+    margin-bottom: 20px; 
+  }
+
+  .iconsContainer {
+    flex-direction: column; 
+    gap: 20px; 
+  }
+
+  .icon {
+    width: 80px; 
+    height: 80px;
+  }
+
+  .label {
+    font-size: 0.9rem;
     margin-top: 5px;
   }
+}

@@ -1,54 +1,156 @@
+/* Header global : Design d'origine */
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* Centre le contenu */
   padding: 10px 20px;
   background-color: #d2b48c;
 }
 
+/* Logo */
 .logoContainer {
   flex-shrink: 0;
   margin-right: 50px;
 }
 
 .logo {
-  height: 80px; 
+  height: 80px;
   object-fit: contain;
 }
 
+/* Navigation classique */
 .nav {
-  display: flex;
+  display: flex; 
   gap: 20px;
-  list-style: none;
+  list-style: none; 
   margin: 0;
   padding: 0;
 }
 
+.nav li {
+  display: inline; 
+  margin: 0 30px;
+}
+
 .link {
   text-decoration: none;
-  color: #333; 
+  color: #333;
   font-weight: bold;
   font-size: 22px;
-  position: relative; 
-  padding-bottom: 5px; 
+  position: relative;
+  padding-bottom: 5px;
   transition: color 0.3s;
+  justify-content: space-between;
 }
 
 .link:hover {
-  color: white; 
+  color: white;
 }
 
 .active {
-  color: #fff; 
+  color: #fff;
 }
 
 .active::after {
-  content: ""; 
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 2px; 
-  background-color: white; 
+  height: 2px;
+  background-color: white;
   transition: width 0.3s;
+}
+
+/* Burger menu */
+.burger {
+  display: none; /* Cacher le menu burger par défaut */
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  cursor: pointer;
+}
+
+.line {
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s;
+  transform-origin: center; /* Définit le centre comme point de rotation */
+}
+
+.line.open:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px); /* Ajuste légèrement la position */
+}
+
+.line.open:nth-child(2) {
+  opacity: 0; /* Cache la ligne du milieu */
+}
+
+.line.open:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -5px); /* Ajuste légèrement la position */
+}
+
+/* Responsive : Affichage mobile */
+@media (max-width: 768px) {
+  .burger {
+    display: flex; /* Affiche le menu burger */
+  }
+
+  .header {
+    justify-content: space-between;
+  }
+
+  .nav {
+    display: none; /* Masque la nav classique par défaut */
+    flex-direction: column; /* Navigation en colonne pour mobile */
+    align-items: center;
+    background-color: #d2b48c;
+    width: 100%;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    z-index: 10;
+    padding: 20px 0;
+    height: 100%;
+  }
+
+  .nav.show {
+    display: flex; /* Affiche la nav quand le menu est ouvert */
+  }
+
+  .nav li {
+    display: block; /* Passe les items en colonne */
+    margin-bottom: 15px;
+  }
+
+  .link {
+    font-size: 20px;
+    color: white;
+  }
+}
+
+/* Desktop et tablette : Design d'origine */
+@media (min-width: 769px) {
+  .burger {
+    display: none; /* Cache le menu burger */
+  }
+
+  .nav {
+    display: flex; /* Navigation classique */
+    flex-direction: row;
+    position: static;
+    gap: 20px;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .nav.show {
+    display: flex; /* Aucun impact sur le desktop/tablette */
+    flex-direction: row;
+  }
+
+  .nav li {
+    display: inline; 
+  }
 }

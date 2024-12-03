@@ -4,14 +4,15 @@ import styles from "./Header.module.css";
 import logo from "../../assets/img/logo-tc.png";
 
 function Header({ setIsLoading }) {
-  const [activeLink, setActiveLink] = useState("#home"); // Lien actif par défaut
-  const location = useLocation();
+  const [activeLink, setActiveLink] = useState("#home"); // État pour gérer le lien actif dans la navigation
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // État pour savoir si le menu burger est ouvert ou fermé
+  const location = useLocation(); // Permet de connaître la route actuelle
 
   const handleClick = (link) => {
-    setActiveLink(link); // Mettre à jour le lien actif
-
-    // Active le loader UNIQUEMENT pour "Accueil" si on change de page
+    setActiveLink(link); // Met à jour le lien actif
+    setIsMenuOpen(false); // Ferme le menu burger après un clic
     if (link === "#home" && location.pathname !== "/") {
+      // Si on clique sur "Accueil" et qu'on n'est pas déjà sur la page d'accueil
       setIsLoading?.(true); // Active le loader
       setTimeout(() => {
         setIsLoading?.(false); // Désactive le loader après 1 seconde
@@ -19,18 +20,39 @@ function Header({ setIsLoading }) {
     }
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev); // Alterne l'état du menu burger (ouvert/fermé)
+  };
+
   return (
     <header className={styles.header}>
-      {/* Logo */}
+      {/* Logo de l'application */}
       <div className={styles.logoContainer}>
-        <Link to="/" className={styles.logoLink} onClick={() => handleClick("#home")}>
+        <Link
+          to="/"
+          className={styles.logoLink}
+          onClick={() => handleClick("#home")}
+        >
           <img src={logo} alt="Logo Thomas Chevron" className={styles.logo} />
         </Link>
       </div>
 
-      {/* Navigation */}
-      <nav>
-        <ul className={styles.nav}>
+      {/* Icône du menu burger (affichée en mobile) */}
+      <div className={styles.burger} onClick={toggleMenu}>
+        <div
+          className={`${styles.line} ${isMenuOpen ? styles.open : ""}`}
+        ></div>
+        <div
+          className={`${styles.line} ${isMenuOpen ? styles.open : ""}`}
+        ></div>
+        <div
+          className={`${styles.line} ${isMenuOpen ? styles.open : ""}`}
+        ></div>
+      </div>
+
+      {/* Menu de navigation */}
+      <nav className={`${styles.nav} ${isMenuOpen ? styles.show : ""}`}>
+        <ul>
           <li>
             <Link
               to="/"

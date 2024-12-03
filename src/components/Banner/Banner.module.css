@@ -1,5 +1,5 @@
 .bannerSection {
-  height: 100vh; 
+  height: 100vh;
   background: url('../../assets/img/banniere.jpg') no-repeat center center;
   background-size: cover;
   display: flex;
@@ -18,4 +18,41 @@
 
 .bannerContent p {
   font-size: 1.5rem;
+}
+
+/* Responsive Design for Desktop */
+@media (min-width: 1200px) {
+  .bannerSection {
+    height: 90vh;
+    justify-content: flex-start; 
+    padding: 50px;
+  }
+
+  .bannerContent h1 {
+    font-size: 4rem; 
+    text-align: left;
+  }
+
+  .bannerContent p {
+    font-size: 2rem; 
+    text-align: left;
+  }
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .bannerSection {
+    height: auto; 
+    padding: 20px; 
+    background-size: cover;
+  }
+
+  .bannerContent h1 {
+    font-size: 2rem; 
+    margin-bottom: 10px;
+  }
+
+  .bannerContent p {
+    font-size: 1rem; /* Ajuste le texte pour les petits écrans */
+  }
 }

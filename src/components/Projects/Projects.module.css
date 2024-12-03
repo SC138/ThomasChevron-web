@@ -56,10 +56,10 @@
 .projectImage {
   width: 100%;
   height: 200px;
-  object-fit: cover; 
-  object-position: top; 
+  object-fit: cover;
+  object-position: top;
   transition: transform 0.5s ease;
-  align-self: flex-start; 
+  align-self: flex-start;
 }
 
 .projectCard:hover .projectImage {
@@ -87,38 +87,33 @@
 
 .projectButtonContainer {
   position: relative;
-  display: inline-block;
-  margin-top: -20px; 
-}
-
-.projectButtonContainer::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  bottom: -5px;
-  left: -10px;
-  right: -10px;
-  background: transparent;
-  cursor: pointer;
+  display: flex; /* Centrer le bouton */
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .projectButton {
-  padding: 10px 40px;
+  padding: 10px 30px;
   background-color: #b07557;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin: 0 auto;
+  font-size: 1rem;
+  text-align: center;
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
 }
 
-.projectButton:hover,
+.projectButton:hover {
+  background-color: #8d5e46; /* Couleur plus sombre au survol */
+  transform: translateY(-2px); /* Légère élévation au survol */
+}
+
 .projectButtonContainer:hover .projectButton {
-  background-color: #8d5e46; /* Teinte plus foncée au survol */
-  animation: focus-in-expand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; /* animation au survol */
+  animation: focus-in-expand 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @keyframes focus-in-expand {
@@ -140,7 +135,7 @@
 }
 
 .fullWidth .projectCard {
-  height: 1000px; /* Hauteur ajustée pour JobGestion */
+  height: 1000px; /* Même hauteur que les autres cards en mobile */
 }
 
 .fullWidth .sliderImage {
@@ -148,4 +143,89 @@
   height: 700px; /* Taille spécifique des images dans le slider */
   object-fit: cover;
   object-position: top;
+}
+
+/* Texte uniquement pour desktop */
+.desktopOnly {
+  display: block; /* Visible par défaut */
+}
+
+/* Texte uniquement pour mobile */
+.mobileOnly {
+  display: none; /* Masqué par défaut */
+}
+
+@media (max-width: 768px) {
+  .projectList {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .projectCardLink {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .projectCard {
+    height: 300px;
+  }
+
+  .projectImage {
+    height: 150px;
+  }
+
+  .projectContent {
+    padding: 10px;
+  }
+
+  .projectTitle {
+    font-size: 1.2em;
+  }
+
+  .projectDescription {
+    font-size: 0.9em;
+  }
+
+  .projectButton {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  .projectButtonContainer {
+    margin-top: 0px;
+  }
+
+  .desktopOnly {
+    display: none;
+  }
+
+  .mobileOnly {
+    display: block; /* Visible uniquement en mobile */
+  }
+
+  .projectButton {
+    padding: 8px 20px;
+  }
+
+  /* Card spécifique pour JobGestion */
+  .fullWidth .projectCard {
+    height: 300px;
+  }
+
+  .fullWidth .sliderImage {
+    height: 120px;
+  }
+
+  .fullWidth .projectContent {
+    padding: 10px;
+  }
+
+  .fullWidth .projectTitle {
+    font-size: 1.1em;
+  }
+
+  .fullWidth .projectDescription {
+    font-size: 0.9em;
+  }
 }

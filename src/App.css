@@ -40,6 +40,7 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #d2b48c;
+  width: 100%; 
 }
 
 .App-link {
@@ -52,5 +53,19 @@ body {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Responsive desktop large */
+@media (min-width: 1200px) {
+  .App-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .App-logo {
+    height: 30vmin; /* Réduction légère pour les grands écrans */
   }
 }

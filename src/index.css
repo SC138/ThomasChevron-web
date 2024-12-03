@@ -2,7 +2,14 @@ html,
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Empêche le scroll sur toute la page */
+  overflow: hidden; /* Évite tout scroll par défaut */
+
+}
+
+main {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
 }
 
 .App {

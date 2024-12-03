@@ -1,13 +1,12 @@
-/* Conteneur principal de la section */
 .aboutSection {
+  min-height: 100vh; /* S'adapte à la taille de l'écran */
+  height: auto; /* S'étend si le contenu dépasse */
+  overflow-y: auto; /* Ajoute un scroll si nécessaire */
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow-x: hidden;
-  background-color: black;
-  padding: 50px;
-  gap: 30px;
 }
 
 /* Conteneur des éléments (image + texte) */
@@ -54,6 +53,7 @@
 .description {
   font-size: 1.2rem;
   line-height: 1.6;
+
   color: #ffd7a2;
 }
 
@@ -140,6 +140,7 @@
   transition:
     opacity 0.4s ease,
     transform 0.4s ease; /* Animation fluide */
+  margin-bottom: 50px;
 }
 
 /* Affiche le texte au survol */
@@ -200,6 +201,43 @@
 }
 
 /* Responsive Design */
+/* Ajout pour les écrans larges (desktop) */
+@media (min-width: 1200px) {
+  .contentContainer {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .portrait2Container {
+    width: 400px;
+    margin-left: 0;
+  }
+
+  .textContainer {
+    padding-left: 40px;
+    margin: 0;
+  }
+
+  .extraTextContainer {
+    max-width: 1000px;
+  }
+
+  .extraTitle {
+    font-size: 3rem;
+  }
+
+  .valuesAndGoalsContainer {
+    gap: 40px;
+    justify-content: space-between;
+  }
+
+  .valuesContainer,
+  .goalsContainer {
+    padding: 30px;
+  }
+}
+
 @media (max-width: 768px) {
   .contentContainer {
     flex-direction: column;

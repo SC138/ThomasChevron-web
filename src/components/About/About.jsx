@@ -8,22 +8,27 @@ function About() {
   return (
     <motion.section
       className={styles.aboutSection}
-      initial={{ opacity: 0, y: 50 }} // Point de départ (invisible et décalé vers le bas)
-      whileInView={{ opacity: 1, y: 0 }} // Apparition en douceur
-      transition={{ duration: 2 }} // Durée de l'animation
-      viewport={{ once: true }} // Déclenchement une seule fois
+      initial={{ opacity: 0, y: 50 }} // L'élément commence invisible et décalé vers le bas
+      whileInView={{ opacity: 1, y: 0 }} // Apparaît avec une transition fluide
+      transition={{ duration: 2 }} // Animation qui dure 2 secondes
+      viewport={{ once: true }} // Animation déclenchée une seule fois
     >
       <section id="about" className={styles.aboutSection}>
+        {/* Conteneur de la bannière */}
         <div className={styles.bannerContainer}>
+          {/* Image de la bannière */}
           <img src={banner} alt="Bannière" className={styles.banner} />
           <div className={styles.overlay}>
+            {/* Conteneur pour le portrait */}
             <div className={styles.portraitContainer}>
               <img
                 src={portrait}
                 alt="Portrait de Thomas Chevron"
-                className={styles.portrait}
+                className={styles.portrait} // Style de l'image du portrait
               />
             </div>
+
+            {/* Conteneur pour le texte de la bannière */}
             <div className={styles.textOverlay}>
               <h2 className={styles.title}>Thomas Chevron</h2>
               <p className={styles.text}>
