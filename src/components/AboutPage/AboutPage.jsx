@@ -78,7 +78,7 @@ function AboutPage() {
             Développeur Web - Web Mobile | 2022 <br />
             Titre RNCP niveau 5 - BAC+2 - La Piscine, à Mérignac
           </p>
-          <p className={styles.description}>-</p>
+          <hr className={styles.horizontalRule} />
           <p className={styles.description}>
             Développeur d'application - JavaScript React | 2023 - 2024 <br />
             Titre RNCP niveau 6 - BAC+4 - OpenClassrooms, formation en

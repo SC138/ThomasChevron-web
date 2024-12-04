@@ -9,6 +9,7 @@
   font-size: 2em;
   margin-bottom: 20px;
   color: #ffd7a2;
+  cursor: default;
 }
 
 .projectList {
@@ -77,12 +78,14 @@
 .projectTitle {
   font-size: 1.5em;
   margin-bottom: 10px;
+  cursor: default;
 }
 
 .projectDescription {
   color: #555;
   margin-bottom: 15px;
   flex-grow: 1;
+  cursor: default;
 }
 
 .projectButtonContainer {

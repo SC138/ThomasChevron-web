@@ -48,14 +48,23 @@
   font-weight: bold;
   margin-bottom: 20px;
   color: #ffd7a2;
+  cursor: default;
 }
 
 .description {
   font-size: 1.2rem;
   line-height: 1.6;
-
   color: #ffd7a2;
+  cursor: default;
 }
+
+.horizontalRule {
+  border: none; 
+  border-top: 2px solid #ffd7a2; 
+  width: 60%; 
+  margin: 20px auto;
+}
+
 
 .cvLink {
   color: #ffd7a2;
@@ -102,12 +111,14 @@
   color: #ffd7a2;
   margin-bottom: 15px;
   opacity: 1;
+  cursor: default;
 }
 
 .extraDescription {
   font-size: 1.2rem;
   line-height: 1.6;
   color: #555;
+  cursor: default;
 }
 
 /* Conteneur pour les logos */
@@ -186,6 +197,7 @@
 .goalsTitle {
   font-size: 1.8rem;
   margin-bottom: 15px;
+  cursor: default;
 }
 
 .valuesList {
@@ -193,11 +205,13 @@
   padding: 0;
   font-size: 1.2rem;
   line-height: 1.6;
+  cursor: default;
 }
 
 .goalsDescription {
   font-size: 1.2rem;
   line-height: 1.6;
+  cursor: default;
 }
 
 /* Responsive Design */

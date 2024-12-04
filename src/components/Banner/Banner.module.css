@@ -9,15 +9,18 @@
   color: white;
   position: relative; /* Nécessaire pour l'animation */
   z-index: 10; /* Assure que la bannière reste au-dessus des autres */
+  cursor: default;
 }
 
 .bannerContent h1 {
   font-size: 3rem;
   margin-bottom: 10px;
+  cursor: default;
 }
 
 .bannerContent p {
   font-size: 1.5rem;
+  cursor: default;
 }
 
 /* Responsive Design for Desktop */
@@ -31,6 +34,7 @@
   .bannerContent h1 {
     font-size: 4rem; 
     text-align: left;
+    cursor: default;
   }
 
   .bannerContent p {
