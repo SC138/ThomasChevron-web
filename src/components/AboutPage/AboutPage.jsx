@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion"; // Import de Framer Motion
 import styles from "./AboutPage.module.css";
-import portrait2 from "../../assets/img/portrait2.jpg";
+import portrait2 from "../../assets/img/portrait2.avif";
 
 import { ReactComponent as LogoCSS } from "../../assets/img/css3-02-svgrepo-com.svg";
 import { ReactComponent as LogoHTML } from "../../assets/img/html5-02-svgrepo-com.svg";
