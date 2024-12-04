@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Thomas Chevron - Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bienvenue sur mon portfolio en ligne ! Ce site présente mes compétences, mes projets et des informations à mon sujet en tant que développeur web junior.
 
-## Available Scripts
+## 🚀 Fonctionnalités
 
-In the project directory, you can run:
+- **Page d'accueil** : Introduction avec un design animé et un menu de navigation clair.
+- **À propos de moi** : Informations sur mes formations, mes valeurs et ce que je recherche en tant que développeur.
+- **Projets** : Liste de mes projets avec descriptions détaillées et animations.
+- **Contact** : Icônes interactives pour me retrouver sur LinkedIn, GitHub ou m'envoyer un email.
 
-### `npm start`
+## 📸 Aperçu
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Aperçu du site](./src/assets/img/aperçu.avif)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Technologies utilisées
 
-### `npm test`
+- **Front-end** :
+  - HTML5, CSS3
+  - JavaScript
+  - React.js
+  - Framer Motion pour les animations
+- **Outils** :
+  - GitHub pour le contrôle de version
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📂 Arborescence
 
-### `npm run build`
+Voici une vue des dossiers principaux :  
+![Arborescence](./src/assets/img/Arborescence.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 💻 Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clonez le dépôt sur votre machine locale :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/SC138/ThomasChevron-web.git
+```
 
-### `npm run eject`
+Installez les dépendances :
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Lancez le site en mode développement :
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🌐 Déploiement
 
-## Learn More
+Le site est hébergé sur Netlify : [Voir le site en ligne](https://thomaschevron.netlify.app/).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📞 Contact
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Vous pouvez me retrouver sur :
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [LinkedIn](https://www.linkedin.com/in/thomas-chevron/)
+- [GitHub](https://github.com/SC138/)
+- Par email : [chevron.thomas33@gmail.com](mailto:chevron.thomas33@gmail.com)
