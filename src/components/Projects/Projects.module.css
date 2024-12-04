@@ -55,7 +55,7 @@
 
 .projectImage {
   width: 100%;
-  height: 200px;
+  height: 230px;
   object-fit: cover;
   object-position: top;
   transition: transform 0.5s ease;
@@ -154,6 +154,71 @@
 .mobileOnly {
   display: none; /* Masqué par défaut */
 }
+
+/* Responsive Design for Desktop (1024px) */
+@media (max-width: 1024px) {
+  .projectList {
+    flex-wrap: wrap;
+    justify-content: space-between; /* Ajuste l'espacement entre les cards */
+
+  }
+
+  .projectCardLink {
+    width: calc(50% - 20px); /* Passe à 2 cards par ligne */
+    margin: 10px; /* Réduit la marge pour un meilleur alignement */
+  }
+
+  .projectCard {
+    height: 400px; /* Taille légèrement réduite */
+  }
+
+  .projectImage {
+    height: 180px; /* Ajuste l'image */
+  }
+
+  .projectContent {
+    padding: 15px; /* Réduit légèrement le padding interne */
+  }
+
+  .projectTitle {
+    font-size: 1.3em; /* Taille légèrement réduite */
+  }
+
+  .projectDescription {
+    font-size: 1em; /* Description équilibrée */
+  }
+
+  .projectButton {
+    padding: 10px 25px; /* Boutons adaptés */
+    font-size: 0.95rem; /* Taille légèrement réduite */
+  }
+
+  .projectButtonContainer {
+    margin-top: 5px; /* Moins d'espace au-dessus du bouton */
+  }
+
+  .fullWidth .projectCard {
+    height: 400px; /* Même taille que les autres cards */
+  }
+
+  .fullWidth .sliderImage {
+    height: 200px; /* Ajuste la hauteur de l'image dans le slider */
+  }
+
+  .fullWidth .projectContent {
+    padding: 15px;
+  }
+
+  .fullWidth .projectTitle {
+    font-size: 1.3em; /* Taille du titre ajustée */
+  }
+
+  .fullWidth .projectDescription {
+    font-size: 1em; /* Taille de la description ajustée */
+  }
+}
+
+
 
 @media (max-width: 768px) {
   .projectList {
