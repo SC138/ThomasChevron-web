@@ -73,7 +73,7 @@ function AboutPage() {
         >
           <h2 className={styles.title}>À propos de moi</h2>
           <p className={styles.description}>
-            Issue de deux formations en développement web : <br />
+            Issu de deux formations en développement web : <br />
             <br />
             Développeur Web - Web Mobile | 2022 <br />
             Titre RNCP niveau 5 - BAC+2 - La Piscine, à Mérignac
