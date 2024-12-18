@@ -159,11 +159,10 @@
 }
 
 /* Responsive Design for Desktop (1024px) */
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .projectList {
     flex-wrap: wrap;
     justify-content: space-between; /* Ajuste l'espacement entre les cards */
-
   }
 
   .projectCardLink {
@@ -221,9 +220,8 @@
   }
 }
 
-
-
-@media (max-width: 768px) {
+/* @media (max-width: 768px) */
+@media (max-width: 880px) {
   .projectList {
     flex-direction: column;
     justify-content: center;

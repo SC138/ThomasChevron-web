@@ -29,10 +29,8 @@ function Projects() {
       title: "Fisheye",
       descriptionDesktop: (
         <>
-          Un projet photo interactif qui permet de découvrir des photographes
-          talentueux. <br />
-          Développé en JavaScript, ce projet mise sur l'accessibilité avec une
-          navigation clavier et des descriptions conformes aux standards WCAG.
+          Un site interactif pour la découverte de photographes. <br />
+          Développé en JavaScript, ce projet assure une accessibilité WCAG.
         </>
       ),
       descriptionMobile: "Un projet photo interactif en JavaScript.",
